@@ -1,0 +1,135 @@
+/* style.css — Kirunga Group landing page
+   Floating card layout on fixed leafy background
+*/
+
+:root{
+  --green:#1f5c3b;
+  --gold:#d6a450;
+  --cream:#f8f4ec;
+  --muted:#6b6b6b;
+  --text:#222;
+  --maxW:1100px;
+}
+
+/* -------- Base & background -------- */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background: url('images/green-bg.jpg') no-repeat center top fixed;
+  background-size: cover;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+  font-size:16px;
+}
+
+.container{max-width:var(--maxW);margin:0 auto;padding:22px}
+
+/* -------- Header (fixed translucent) -------- */
+.site-header{
+  position:fixed;top:0;left:0;width:100%;
+  background:rgba(255,255,255,0.86);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(31,92,59,0.06);
+  z-index:200;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:var(--maxW);margin:0 auto;padding:12px 20px}
+.brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--text)}
+.logo{height:46px;width:46px;object-fit:contain;border-radius:8px;background:white;padding:4px}
+.brand-text strong{color:var(--green);display:block;font-size:16px}
+.brand-text small{display:block;color:var(--muted);font-size:12px}
+
+.main-nav{display:flex;gap:14px;align-items:center}
+.main-nav a{color:var(--green);font-weight:600;padding:8px;border-radius:8px}
+.btn-ghost{border:2px solid var(--green);padding:8px 12px;background:transparent;color:var(--green)}
+
+/* Mobile menu */
+.menu-btn{display:none;background:none;border:0;font-size:22px;color:var(--green);cursor:pointer}
+
+/* -------- Floating cards (sections) -------- */
+.section-card, .hero-card{
+  background: rgba(255,255,255,0.94);
+  border-radius:18px;
+  box-shadow:0 12px 36px rgba(31,92,59,0.12);
+  margin:90px auto 30px auto;
+  padding:30px;
+  max-width:var(--maxW);
+  backdrop-filter: blur(2px);
+}
+
+/* Hero specifics */
+.hero-grid{display:grid;grid-template-columns:1fr 520px;gap:24px;align-items:center}
+.hero-image{width:100%;height:100%;object-fit:cover;border-radius:12px;box-shadow:0 8px 24px rgba(31,92,59,0.08)}
+.hero-copy h1{margin:0;color:var(--green);font-size:30px}
+.lede{margin-top:12px;color:var(--muted)}
+.cta-row{display:flex;gap:12px;margin-top:18px;align-items:center}
+.btn{padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none;display:inline-block}
+.btn-primary{background:var(--green);color:white}
+.btn-whatsapp{background:#25d366;color:white}
+.micro{color:var(--muted);font-size:13px;margin-top:10px}
+
+/* Features */
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.feature-card{background:rgba(255,255,255,0.98);border-radius:12px;padding:16px;text-align:center;box-shadow:0 8px 20px rgba(31,92,59,0.06)}
+.feature-card img{width:48px;height:48px;display:block;margin:0 auto 10px}
+
+/* Education long form */
+.edu-columns{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start;margin-top:12px}
+.edu-text h3{margin-top:12px;color:var(--green)}
+.edu-media img{width:100%;border-radius:10px;box-shadow:0 8px 18px rgba(31,92,59,0.06)}
+
+/* Founder */
+.founder-grid{display:grid;grid-template-columns:220px 1fr;gap:20px;align-items:start}
+.founder-photo img{width:220px;height:220px;object-fit:cover;border-radius:14px;box-shadow:0 10px 24px rgba(31,92,59,0.12)}
+.founder-story h2{margin-top:0;color:var(--green)}
+.founder-cta{margin-top:14px;display:flex;gap:10px}
+
+/* About */
+.quick-list{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;color:var(--muted)}
+
+/* Products */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.product{background:var(--cream);border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(31,92,59,0.06);display:flex;flex-direction:column;gap:12px}
+.product img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+.product-body h3{margin:0;color:var(--green)}
+.product-actions{margin-top:auto}
+.btn-sm{background:var(--gold);padding:8px 10px;border-radius:8px;font-weight:700;color:#222;display:inline-block}
+
+/* Partners */
+.partners-area{text-align:center;margin-top:12px}
+.partners-img{max-width:100%;border-radius:10px;box-shadow:0 8px 20px rgba(31,92,59,0.06)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start}
+.contact-left .contact-details p{margin:6px 0}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e7e7e7;margin-top:6px}
+
+/* Footer */
+.site-footer{padding:18px 0;text-align:center;margin-top:30px;background:rgba(255,255,255,0.86);backdrop-filter:blur(4px)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:var(--maxW);margin:0 auto;padding:6px 20px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* Fade in animation */
+.fade-in{opacity:0;transform:translateY(18px);transition:all .85s cubic-bezier(.2,.9,.2,1)}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* Responsive */
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr 420px}
+  .edu-columns{grid-template-columns:1fr}
+  .founder-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:800px){
+  .main-nav{display:none}
+  .menu-btn{display:block}
+  .section-card, .hero-card{margin:120px 18px 30px 18px;padding:20px}
+  .hero-grid{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .product img{height:140px}
+  .founder-photo img{width:100%;height:auto}
+  .brand-text small{display:none}
+}
