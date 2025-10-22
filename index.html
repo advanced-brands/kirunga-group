@@ -29,7 +29,7 @@
         <a href="#Why Kirunga">Why-Kirunga?</a>
         <a href="#Our-products">Our-Products</a>
         <a href="#partners">Shop</a>
-        <a href="#Founder">Founder</a>
+        <a href="#Team-leader">Team Leader</a>
         <a href="#contact" class="btn-ghost">Contact</a>
       </nav>
 
@@ -161,6 +161,63 @@
       </div>
     </section>
 
+    <!-- ===== KEY COMPETENCE PRODUCTS (horizontal slider) ===== -->
+
+    <section id="key-products" class="section-card fade-in">
+  <div class="container">
+    <h2 class="section-title">Key Competence Products</h2>
+    <p class="muted center">Our leading categories of nutrition and wellness.</p>
+
+    <div class="slider" id="productSlider">
+      <!-- Baby Foods -->
+      <div class="product-card">
+        <img src="images/baby oatssoyarice.jpg" alt="Baby Cereal">
+        <h4>Oatssoya Rice</h4>
+        <p>Balances nutition and supports growth in infants.</p>
+        <span class="category">Baby Foods</span>
+      </div>
+
+      <div class="product-card">
+        <img src="images/fiber education.png" alt="Baby Porridge">
+        <h4>Oatsricesemolina</h4>
+        <p>Iron-rich porridge for early growth.</p>
+        <span class="category">Baby Foods</span>
+      </div>
+
+      <!-- Fiber Foods -->
+      <div class="product-card">
+        <img src="images/fiber-mix.jpg" alt="Fiber Mix">
+        <h4>Fiber Mix</h4>
+        <p>Blend of whole grains to boost digestion.</p>
+        <span class="category">Fiber Foods</span>
+      </div>
+
+      <div class="product-card">
+        <img src="images/fiber-cereal.jpg" alt="Fiber Cereal">
+        <h4>Fiber Cereal</h4>
+        <p>Wholesome energy source for your mornings.</p>
+        <span class="category">Fiber Foods</span>
+      </div>
+
+      <!-- Protein Flour -->
+      <div class="product-card">
+        <img src="images/protein-flour.jpg" alt="Protein Flour">
+        <h4>Protein Flour</h4>
+        <p>Plant-based protein to enrich your meals.</p>
+        <span class="category">Protein Flour</span>
+      </div>
+
+      <div class="product-card">
+        <img src="images/soya-flour.jpg" alt="Soya Flour">
+        <h4>Soya Flour</h4>
+        <p>High-protein flour for stronger families.</p>
+        <span class="category">Protein Flour</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       <!-- ===== PRODUCTS (no prices) ===== -->
     <section id="Our-products" class="section-card fade-in">
       <div class="container">
@@ -254,10 +311,10 @@
     </section>
 
     <!-- ===== FOUNDER (CEO) — storytelling with portrait ===== -->
-    <section id="Founder" class="section-card fade-in">
+    <section id="Team-leader" class="section-card fade-in">
       <div class="container founder-grid">
         <div class="founder-story">
-          <h2>Meet the founder — Bagahwe Winnie</h2>
+          <h2>Meet the Team Leader — Bagahwe Winnie</h2>
 
           <p>Winnie is a certified Food and Nutritionist from the University of Sydney, with a Master's in Human Resourse Management and a background in Community Psychology.</p>
 
@@ -324,6 +381,28 @@
 
   <script src="script.js"></script>
 
+<script>
+const slider = document.getElementById('productSlider');
+let isPaused = false;
+let speed = 1;
+
+function autoScroll() {
+  if (!isPaused) {
+    slider.scrollLeft += speed;
+    if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+      slider.scrollLeft = 0;
+    }
+  }
+  requestAnimationFrame(autoScroll);
+}
+
+slider.addEventListener('mouseenter', () => isPaused = true);
+slider.addEventListener('mouseleave', () => isPaused = false);
+slider.addEventListener('touchstart', () => isPaused = true);
+slider.addEventListener('touchend', () => isPaused = false);
+
+autoScroll();
+</script>
 
   
 </body>
