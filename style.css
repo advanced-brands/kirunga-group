@@ -499,7 +499,7 @@ body::before {
 
 .product-card {
   flex: 0 0 250px;
-  background: white;
+  background: #eed085;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   text-align: center;
@@ -525,4 +525,8 @@ body::before {
   font-size: 0.9rem;
   color: var(--green);
   font-weight: 600;
+}
+.slider-cta {
+  margin-top: 2rem;
+  text-align: center;
 }
